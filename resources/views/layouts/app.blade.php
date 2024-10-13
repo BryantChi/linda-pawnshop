@@ -43,7 +43,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap4.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 
-    <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}?v=1.1.1">
+    <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}?v={{ time() }}">
 
     @stack('third_party_stylesheets')
 
