@@ -43,7 +43,7 @@
                 <div class="row">
                     <div class="col-lg-6 mb-lg-auto mb-3">
                         ◆ QUICK LINKS:
-                        <div class="row">
+                        <div class="row px-md-0 px-3">
                             <div class="col-6 p-0">
                                 <a href="{{route('about')}}" class="footer-link">公司簡介</a>
                             </div>

@@ -1,7 +1,8 @@
 <!-- Name Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('name', 'Name:') !!}
-    {!! Form::text('name', null, ['class' => 'form-control', 'id' => 'name', 'required' => true]) !!}
+    {{-- {!! Form::text('name', null, ['class' => 'form-control', 'id' => 'name', 'required' => true]) !!} --}}
+    <input type="text" name="name" id="name" value="{{ $adminUsers->name ?? '' }}" class="form-control" required {{ Request::is('admin/adminUsers/edit*') ? 'disabled' : '' }}>
 </div>
 
 <!-- Email Field -->

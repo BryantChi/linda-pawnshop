@@ -43,7 +43,7 @@
     <div class="card">
         <div class="card-body login-card-body">
             <div class="login-logo">
-                <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
+                <a href="{{ url('/admin') }}"><b>{{ config('app.name') }}</b></a>
             </div>
             {{-- <p class="login-box-msg">Sign in to start your session</p> --}}
 
@@ -51,15 +51,15 @@
                 @csrf
 
                 <div class="input-group mb-3">
-                    <input type="email"
-                           name="email"
-                           value="{{ old('email') }}"
-                           placeholder="Email"
-                           class="form-control @error('email') is-invalid @enderror">
+                    <input type="text"
+                           name="name"
+                           value="{{ old('name') }}"
+                           placeholder="Name"
+                           class="form-control @error('name') is-invalid @enderror">
                     <div class="input-group-append">
-                        <div class="input-group-text"><span class="fas fa-envelope"></span></div>
+                        <div class="input-group-text"><span class="fas fa-user"></span></div>
                     </div>
-                    @error('email')
+                    @error('name')
                     <span class="error invalid-feedback">{{ $message }}</span>
                     @enderror
                 </div>

@@ -8,16 +8,15 @@
     <meta name="description" content="{{ $seoInfo->description }}" />
     <meta name="keywords" content="{{ $seoInfo->keywords }}" />
     <meta property="og:locale" content="zh_TW" />
-    <meta name="author" content="紀孟勳 Bryantchi.work@gmail.com" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ $seoInfo->og_title }}" />
     <meta property="og:description" content="{{ $seoInfo->og_discription }}" />
-    <meta property="og:image" content="{{ asset('assets/img/fimgs/fbimg.png') }}" />
+    <meta property="og:image" content="{{ asset('assets/img/fimgs/fbimg.jpg') }}" />
     <meta property="og:url" content="{{ url()->full() }}" />
     <meta property="og:site_name" content="{{ $seoInfo->og_site_name }}" />
     <title>{{ $seoInfo->title }}</title>
     <meta name="title" content="{{ $seoInfo->title }}" />
-    <link rel="canonical" href="" />
+    <link rel="canonical" href="{{ url()->full() }}" />
 
     <!-- Favicon -->
     <link href="{{ asset('assets/img/fimgs/favicon.ico') }}" rel="icon">
