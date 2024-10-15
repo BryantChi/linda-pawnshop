@@ -158,6 +158,10 @@ class MarqueeInfoController extends AppBaseController
 
         $this->marqueeInfoRepository->delete($id);
 
+        if ($marqueeInfo->used == 1) {
+            MarqueeInfo::where('id', '!=', $id)->first()->update(['used' => 0]);
+        }
+
         Flash::success('Marquee Info deleted successfully.');
 
         return redirect(route('admin.marqueeInfos.index'));
