@@ -60,7 +60,7 @@ class MarqueeInfoController extends AppBaseController
         $marqueeInfo = $this->marqueeInfoRepository->create($input);
 
         if ($input['used'] == 1) {
-            MarqueeInfo::whereNot('id', '!=', $marqueeInfo->id)->update(['used' => 0]);
+            MarqueeInfo::where('id', '!=', $marqueeInfo->id)->update(['used' => 0]);
         }
 
         Flash::success('Marquee Info saved successfully.');
