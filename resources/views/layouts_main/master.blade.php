@@ -77,9 +77,9 @@
     <a href="#" class="rounded-circle back-to-top">
         <img src="{{asset('assets/img/00-hp/top.png')}}" class="img-fluid" style="width: 50px;" alt="">
     </a>
-
+    {{-- line://ti/p/0286632299 --}}
     <div class="d-none d-md-block social-links-btn">
-        <a href="line://ti/p/0286632299" class="d-none d-md-block"><img src="{{asset('assets/img/00-hp/left_line.png')}}"
+        <a href="https://line.me/ti/p/aFgNwWfjga" class="d-none d-md-block"><img src="{{asset('assets/img/00-hp/left_line.png')}}"
                 class="img-fluid left-line-img" alt=""></a>
         <a href="https://www.facebook.com/messages/t/1682613548693433" class="d-none d-md-block"><img src="{{asset('assets/img/00-hp/left_msg.png')}}"
                 class="img-fluid left-msg-img" alt=""></a>
@@ -89,7 +89,7 @@
     <div class="d-flex d-md-none w-100 position-fixed bottom-0 left-0 social-links-btn-mobile">
         <div class="row justify-content-center align-content-center text-center p-0 m-0 w-100">
             <div class="col-4 s-line-btn align-self-center">
-                <a href="line://ti/p/0286632299" target="_blank">
+                <a href="https://line.me/ti/p/aFgNwWfjga" target="_blank">
                     <span><i class="bi bi-line"></i></span> 線上預約
                 </a>
             </div>
