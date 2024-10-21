@@ -14,7 +14,7 @@
             @endif
             <tr>
                 <td>{{ $adminUser->name }}</td>
-                <td>{{ $adminUser->email }}</td>
+                <td style="min-width: 300px;">{{ $adminUser->email }}</td>
                 <td width="120">
 
                     {!! Form::open(['route' => ['admin.adminUsers.destroy', $adminUser->id], 'method' => 'delete']) !!}

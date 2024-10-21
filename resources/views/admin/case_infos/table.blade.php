@@ -16,8 +16,8 @@
                     <td>{{ $caseInfo->id }}</td>
                     <td width="120">{{ $caseInfo->occupation }}</td>
                     <td width="120">{{ $caseInfo->name }}</td>
-                    <td width="120">{{ $caseInfo->case_title }}</td>
-                    <td>{{ $caseInfo->case_content }}</td>
+                    <td style="min-width: 300px;">{{ $caseInfo->case_title }}</td>
+                    <td style="min-width: 300px;">{{ $caseInfo->case_content }}</td>
                     <td width="120">
                         {!! Form::open(['route' => ['admin.caseInfos.destroy', $caseInfo->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>

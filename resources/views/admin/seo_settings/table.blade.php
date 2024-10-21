@@ -16,12 +16,12 @@
             @foreach ($seoSettings as $seoSetting)
                 <tr>
                     <td>{{ $seoSetting->url }}</td>
-                    <td>{{ $seoSetting->title }}</td>
-                    <td>{{ $seoSetting->description }}</td>
-                    <td>{{ $seoSetting->keywords }}</td>
-                    <td>{{ $seoSetting->og_title }}</td>
-                    <td>{{ $seoSetting->og_description }}</td>
-                    <td>{{ $seoSetting->og_site_name }}</td>
+                    <td style="min-width: 300px;">{{ $seoSetting->title }}</td>
+                    <td style="min-width: 300px;">{{ $seoSetting->description }}</td>
+                    <td style="min-width: 300px;">{{ $seoSetting->keywords }}</td>
+                    <td style="min-width: 300px;">{{ $seoSetting->og_title }}</td>
+                    <td style="min-width: 300px;">{{ $seoSetting->og_description }}</td>
+                    <td style="min-width: 300px;">{{ $seoSetting->og_site_name }}</td>
                     <td width="120">
                         {!! Form::open(['route' => ['admin.seoSettings.destroy', $seoSetting->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>

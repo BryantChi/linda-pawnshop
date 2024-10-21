@@ -73,9 +73,9 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <!-- User image -->
-                        <li class="user-header bg-primary">
+                        <li class="user-header bg-gray">
                             <img src="{{ asset('assets/img/fimgs/icon128.png') }}"
-                                class="img-circle elevation-2" alt="User Image">
+                                class="img-circle elevation-2 bg-white" alt="User Image">
                             <p>
                                 @auth
                                 {{ Auth::user()->name }}
@@ -85,10 +85,10 @@
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
-                            <a href="#" class="btn btn-default btn-flat">Profile</a>
+                            {{-- <a href="#" class="btn btn-default btn-flat">Profile</a> --}}
                             <a href="#" class="btn btn-default btn-flat float-right"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                Sign out
+                                登出
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf

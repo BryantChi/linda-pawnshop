@@ -10,7 +10,7 @@
         <tbody>
             @foreach ($marqueeInfos as $marqueeInfo)
                 <tr>
-                    <td>{{ $marqueeInfo->marquee_text }}</td>
+                    <td style="min-width: 300px;">{{ $marqueeInfo->marquee_text }}</td>
                     <td width="120">{{ $marqueeInfo->used == 1 ? '啟用' : '停用' }}</td>
                     <td width="120">
                         {!! Form::open(['route' => ['admin.marqueeInfos.destroy', $marqueeInfo->id], 'method' => 'delete']) !!}

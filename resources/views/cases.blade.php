@@ -25,7 +25,7 @@
             </div>
 
             <div class="row justify-content-center align-items-start mb-5">
-                <p class="text-danger text-end w-100 mb-0" style="font-size: 0.8rem;opacity: 0.7;">成功協助過8個借款案例</p>
+                <p class="text-danger text-end w-100 mb-0" style="font-size: 0.8rem;opacity: 0.7;">成功協助過{{$cases->count()}}個借款案例</p>
 
                 @if ($cases->count() > 0)
 
