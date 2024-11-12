@@ -33,21 +33,50 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- Libraries Stylesheet -->
-    <link href="{{asset('assets/lib/animate/animate.min.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="{{asset('assets/css/style.css')}}?v={{time()}}" rel="stylesheet">
+    <link href="{{ asset('assets/css/style.css') }}?v={{ time() }}" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}?v={{time()}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}?v={{ time() }}">
 
     @stack('third_party_stylesheets')
 
     @stack('page_css')
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16751739416"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'AW-16751739416');
+    </script>
+    <!-- Event snippet for [MT]-[DEFAULT2] conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function() {
+                if (typeof(url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-16751739416/xfUcCN_9_eAZEJiE7bM-',
+                'value': 1.0,
+                'currency': 'TWD',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
 
 </head>
 
@@ -75,14 +104,15 @@
     <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
             class="bi bi-arrow-up"></i></a> -->
     <a href="#" class="rounded-circle back-to-top">
-        <img src="{{asset('assets/img/00-hp/top.png')}}" class="img-fluid" style="width: 50px;" alt="">
+        <img src="{{ asset('assets/img/00-hp/top.png') }}" class="img-fluid" style="width: 50px;" alt="">
     </a>
     {{-- line://ti/p/0286632299 --}}
     <div class="d-none d-md-block social-links-btn">
-        <a href="https://line.me/ti/p/aFgNwWfjga" class="d-none d-md-block"><img src="{{asset('assets/img/00-hp/left_line.png')}}"
-                class="img-fluid left-line-img" alt=""></a>
-        <a href="https://www.facebook.com/messages/t/1682613548693433" class="d-none d-md-block"><img src="{{asset('assets/img/00-hp/left_msg.png')}}"
-                class="img-fluid left-msg-img" alt=""></a>
+        <a href="https://line.me/ti/p/aFgNwWfjga" class="d-none d-md-block"><img
+                src="{{ asset('assets/img/00-hp/left_line.png') }}" class="img-fluid left-line-img" alt=""></a>
+        <a href="https://www.facebook.com/messages/t/1682613548693433" class="d-none d-md-block"
+            onclick="return gtag_report_conversion('https://www.facebook.com/messages/t/1682613548693433');"><img
+                src="{{ asset('assets/img/00-hp/left_msg.png') }}" class="img-fluid left-msg-img" alt=""></a>
     </div>
 
 
@@ -117,24 +147,25 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="{{asset('assets/js/main.js')}}?v={{time()}}"></script>
+    <script src="{{ asset('assets/js/main.js') }}?v={{ time() }}"></script>
 
-    <script src="{{asset('assets/js/custom.js')}}?v={{time()}}"></script>
+    <script src="{{ asset('assets/js/custom.js') }}?v={{ time() }}"></script>
 
     <script>
-        $(document).ready(function () {
-        });
+        $(document).ready(function() {});
     </script>
 
     @if (!request()->is('index'))
-    <script>
-        $(document).ready(function () {
-            // 當頁面加載完成後，將 id="main" 的區域自動滾動到可視範圍內
-            $('html, body').animate({
-                scrollTop: $('#main').offset().top - $('#pg-pagetitle').height() + 30
-            }, 0); // 1000 毫秒（1 秒）滾動到該區域
-        });
-    </script>
+        <script>
+            $(document).ready(function() {
+                // 當頁面加載完成後，將 id="main" 的區域自動滾動到可視範圍內
+                if ($('#main')) {
+                    $('html, body').animate({
+                        scrollTop: $('#main').offset().top - $('#pg-pagetitle').height() + 30
+                    }, 0); // 1000 毫秒（1 秒）滾動到該區域
+                }
+            });
+        </script>
     @endif
 
     @stack('third_party_scripts')
