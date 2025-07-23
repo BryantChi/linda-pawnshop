@@ -29,7 +29,8 @@ class CaseInfoController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $caseInfos = $this->caseInfoRepository->paginate(10);
+        // $caseInfos = $this->caseInfoRepository->paginate(10);
+        $caseInfos = $this->caseInfoRepository->all();
 
         return view('admin.case_infos.index')
             ->with('caseInfos', $caseInfos);

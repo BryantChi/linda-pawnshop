@@ -62,14 +62,31 @@
     </script>
     <!-- Event snippet for [MT]-[DEFAULT2] conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
     <script>
-        function gtag_report_conversion(url) {
+        function gtag_report_conversion_message(url) {
             var callback = function() {
                 if (typeof(url) != 'undefined') {
-                    window.location = url;
+                    window.open(url, '_blank');
                 }
             };
             gtag('event', 'conversion', {
                 'send_to': 'AW-16751739416/xfUcCN_9_eAZEJiE7bM-',
+                'value': 1.0,
+                'currency': 'TWD',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
+    <!-- Event snippet for LINE按鈕 conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+        function gtag_report_conversion_line(url) {
+            var callback = function() {
+                if (typeof(url) != 'undefined') {
+                    window.open(url, '_blank');
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-16751739416/X15RCOL9_eAZEJiE7bM-',
                 'value': 1.0,
                 'currency': 'TWD',
                 'event_callback': callback
@@ -106,12 +123,13 @@
     <a href="#" class="rounded-circle back-to-top">
         <img src="{{ asset('assets/img/00-hp/top.png') }}" class="img-fluid" style="width: 50px;" alt="">
     </a>
-    {{-- line://ti/p/0286632299 --}}
+    {{-- line://ti/p/aFgNwWfjga --}}
     <div class="d-none d-md-block social-links-btn">
-        <a href="https://line.me/ti/p/aFgNwWfjga" target="_blank" class="d-none d-md-block"><img
+        <a href="https://line.me/ti/p/aFgNwWfjga" target="_blank"
+            onclick="return gtag_report_conversion_line('https://line.me/ti/p/aFgNwWfjga');" class="d-none d-md-block"><img
                 src="{{ asset('assets/img/00-hp/left_line.png') }}" class="img-fluid left-line-img" alt=""></a>
         <a href="https://www.facebook.com/messages/t/1682613548693433" target="_blank" class="d-none d-md-block"
-            onclick="return gtag_report_conversion('https://www.facebook.com/messages/t/1682613548693433');"><img
+            onclick="return gtag_report_conversion_message('https://www.facebook.com/messages/t/1682613548693433');"><img
                 src="{{ asset('assets/img/00-hp/left_msg.png') }}" class="img-fluid left-msg-img" alt=""></a>
     </div>
 
@@ -119,7 +137,8 @@
     <div class="d-flex d-md-none w-100 position-fixed bottom-0 left-0 social-links-btn-mobile">
         <div class="row justify-content-center align-content-center text-center p-0 m-0 w-100">
             <div class="col-4 s-line-btn align-self-center">
-                <a href="https://line.me/ti/p/aFgNwWfjga" target="_blank">
+                <a href="https://line.me/ti/p/aFgNwWfjga" target="_blank"
+                    onclick="return gtag_report_conversion_line('https://line.me/ti/p/aFgNwWfjga');">
                     <span><i class="bi bi-line"></i></span> 線上預約
                 </a>
             </div>
